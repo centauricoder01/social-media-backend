@@ -3,8 +3,9 @@ const bcrypt = require("bcrypt");
 
 const RegisterUser = async (req, res) => {
   const { username, password, name, email } = req.body;
-  let getbyemail = await UserModel.find({ email });
+  let getbyemail = await UserModel.findOne({ email });
   if (getbyemail) {
+    console.log(getbyemail);
     return res.send("User already exist");
   }
   const salt = await bcrypt.genSalt(10);
