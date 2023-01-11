@@ -9,13 +9,13 @@ const { UpdatePost } = require("../Controllers/CRUD_POST/Update.controller");
 const {
   PostLike,
 } = require("../Controllers/Like&Dislike/Like&Dislike.controller");
-const { Timeline } = require("../Controllers/TimeLine/TImeline.controller");
+// const { Timeline } = require("../Controllers/TimeLine/TImeline.controller");
 
 PostRoutes.post("/", CreatePost);
 PostRoutes.get("/:id", GetPosts);
 PostRoutes.put("/:id", UpdatePost);
 PostRoutes.delete("/:id", DeletePost);
 PostRoutes.put("/:id/like", PostLike);
-PostRoutes.get("/:id/timeline", Timeline);
+// PostRoutes.get("/:id/timeline", Timeline);
 
 module.exports = { PostRoutes };
