@@ -6,8 +6,8 @@ const reqBool = { type: Boolean, default: false };
 const UserSchema = mongoose.Schema(
   {
     username: reqString,
-    password: reqString,
-    name: reqString,
+    password: { type: String, required: true, minLength: 5, maxLength: 10 },
+    name: { type: String, required: true, minLength: 4, maxLength: 30 },
     isAdmin: reqBool,
     email: reqString,
     profilePicture: String,
