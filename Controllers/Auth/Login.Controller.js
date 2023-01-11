@@ -8,13 +8,13 @@ const LoginUser = async (req, res) => {
     if (findUser) {
       let PasswordCheck = await bcrypt.compare(password, findUser.password);
       PasswordCheck
-        ? res.status(200).json(findUser)
-        : res.status(400).json("Password doesn't match");
+        ? res.send({ user: findUser, message: "login Successful" })
+        : res.send({ message: "Password doesn't match" });
     } else {
-      res.status(404).json("User doesn't Exist....");
+      res.send({ message: "User doesn't Exist" });
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.send({ message: "server Error" });
   }
 };
 

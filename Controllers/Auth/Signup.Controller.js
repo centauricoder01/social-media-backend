@@ -5,8 +5,7 @@ const RegisterUser = async (req, res) => {
   const { username, password, name, email } = req.body;
   let getbyemail = await UserModel.findOne({ email });
   if (getbyemail) {
-    console.log(getbyemail);
-    return res.send("User already exist");
+    return res.send({ message: "User already exist" });
   }
   const salt = await bcrypt.genSalt(10);
   const HashedPass = await bcrypt.hash(password, salt);
@@ -19,9 +18,9 @@ const RegisterUser = async (req, res) => {
 
   try {
     await newUser.save();
-    res.send({ newUser, data: "Successful" });
+    res.send({ user: newUser, message: "Successful" });
   } catch (error) {
-    res.send({ message: error.message });
+    res.send({ message: "server error" });
   }
 };
 
