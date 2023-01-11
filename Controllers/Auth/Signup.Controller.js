@@ -19,7 +19,7 @@ const RegisterUser = async (req, res) => {
 
   try {
     await newUser.save();
-    res.send(newUser);
+    res.send({ newUser, data: "Successful" });
   } catch (error) {
     res.send({ message: error.message });
   }
