@@ -2,15 +2,15 @@ const { UserModel } = require("../../Models/User.model");
 const bcrypt = require("bcrypt");
 
 const RegisterUser = async (req, res) => {
-  const { username, password, firstname, lastname } = req.body;
+  const { username, password, name, email } = req.body;
 
   const salt = await bcrypt.genSalt(10);
   const HashedPass = await bcrypt.hash(password, salt);
   const newUser = new UserModel({
     username,
     password: HashedPass,
-    firstname,
-    lastname,
+    name,
+    email,
   });
 
   try {

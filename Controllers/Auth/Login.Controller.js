@@ -2,9 +2,9 @@ const { UserModel } = require("../../Models/User.model");
 const bcrypt = require("bcrypt");
 
 const LoginUser = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    let findUser = await UserModel.findOne({ username: username });
+    let findUser = await UserModel.findOne({ email });
     if (findUser) {
       let PasswordCheck = await bcrypt.compare(password, findUser.password);
       PasswordCheck
