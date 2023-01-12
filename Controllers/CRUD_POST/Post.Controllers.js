@@ -10,3 +10,5 @@ const CreatePost = async (req, res) => {
     res.send({ message: error.message });
   }
 };
+
+module.exports = { CreatePost };
