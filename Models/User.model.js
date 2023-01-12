@@ -10,6 +10,7 @@ const UserSchema = mongoose.Schema(
     name: { type: String, required: true, minLength: 4, maxLength: 30 },
     isAdmin: reqBool,
     email: reqString,
+    gender: reqString,
     profilePicture: String,
     coverPicture: String,
     about: String,

@@ -12,7 +12,6 @@ const LoginUser = async (req, res) => {
       if (!PasswordCheck) {
         return res.send({ message: "Wrong Password" });
       } else {
-        // console.log(findUser);
         let token = jwt.sign(
           {
             username: findUser.username,
