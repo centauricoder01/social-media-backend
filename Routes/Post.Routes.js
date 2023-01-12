@@ -19,7 +19,7 @@ PostRoutes.post("/", upload.single("image"), (req, res) => {
 
   try {
     // await newPost.save();
-    res.status(200).json(req.files);
+    return res.status(200).json(req);
   } catch (error) {
     res.send({ message: error.message });
   }
