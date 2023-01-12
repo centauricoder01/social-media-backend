@@ -31,7 +31,7 @@ const LoginUser = async (req, res) => {
       res.send({ message: "User doesn't Exist" });
     }
   } catch (error) {
-    res.send({ message: "server Error" });
+    res.send({ message: error });
   }
 };
 
