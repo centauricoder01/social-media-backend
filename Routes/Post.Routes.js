@@ -1,4 +1,6 @@
 const express = require("express");
+const { PostModel } = require("../Models/Post.model");
+
 const { Allpost } = require("../Controllers/CRUD_POST/Allpost.controller");
 const {
   DeletePost,
@@ -14,14 +16,14 @@ const upload = multer({ dest: "uploads/" });
 
 // ***************************************************************************
 
-PostRoutes.post("/", upload.single("image"), (req, res) => {
-  // const newPost = new PostModel(req.body);
+PostRoutes.post("/", upload.single("image"), async (req, res) => {
+  const newPost = new PostModel(req.body);
 
   try {
-    // await newPost.save();
-    return res.status(200).json(req);
+    await newPost.save();
+    return res.json(req.body);
   } catch (error) {
-    res.send({ message: error.message });
+    res.send({ raj: error.message });
   }
 });
 PostRoutes.get("/allpost", Allpost);
