@@ -14,7 +14,7 @@ const upload = multer({ dest: "uploads/" });
 
 // ***************************************************************************
 
-PostRoutes.post("/", upload.single("image"), async (req, res) => {
+PostRoutes.post("/", upload.single("image"), (req, res) => {
   // const newPost = new PostModel(req.body);
 
   try {
