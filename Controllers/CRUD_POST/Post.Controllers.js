@@ -4,8 +4,8 @@ const CreatePost = async (req, res) => {
   const newPost = new PostModel(req.body);
 
   try {
-    await newPost.save();
-    res.status(200).json("Post Saved");
+    let postData = await newPost.save();
+    res.send({ message: "Post Saved", postData });
   } catch (error) {
     res.send({ message: error.message });
   }
