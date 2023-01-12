@@ -1,4 +1,5 @@
 const express = require("express");
+const { AllUser } = require("../Controllers/CRUD_USER/AllUser.controller");
 const {
   DeleteUser,
 } = require("../Controllers/CRUD_USER/Deleteuser.controller");
@@ -12,6 +13,7 @@ const {
 } = require("../Controllers/Followers/Unfollow.Controllers");
 const UserRoute = express.Router();
 
+UserRoute.get("/alluser", AllUser);
 UserRoute.get("/:id", GetUser);
 UserRoute.put("/:id", Updateuser);
 UserRoute.delete("/:id", DeleteUser);
