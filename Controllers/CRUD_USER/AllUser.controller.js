@@ -13,7 +13,7 @@ const AllUser = async (req, res) => {
     }
     res.send({ message: "All User", Alluser: ALLUSER });
   } catch (error) {
-    res.send({ message: "Server Error" });
+    res.send({ message: error });
   }
 };
 
