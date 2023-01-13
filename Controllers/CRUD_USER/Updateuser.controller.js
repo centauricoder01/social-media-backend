@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 
 const Updateuser = async (req, res) => {
   let { id } = req.params;
-  let { userid, userAdminstatus, password } = req.body;
+  let { userid, admin, password } = req.body;
 
   try {
     if (id === userid || userAdminstatus) {
