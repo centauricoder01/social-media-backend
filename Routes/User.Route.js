@@ -5,6 +5,9 @@ const {
 } = require("../Controllers/CRUD_USER/Deleteuser.controller");
 const { GetUser } = require("../Controllers/CRUD_USER/Getuser.Controller");
 const {
+  SearchUser,
+} = require("../Controllers/CRUD_USER/SearchUser.controller");
+const {
   Updateuser,
 } = require("../Controllers/CRUD_USER/Updateuser.controller");
 const { FollowUser } = require("../Controllers/Followers/Follow.Controllers");
@@ -14,6 +17,7 @@ const {
 const UserRoute = express.Router();
 
 UserRoute.get("/alluser", AllUser);
+UserRoute.get("/search", SearchUser);
 UserRoute.get("/:id", GetUser);
 UserRoute.put("/:id", Updateuser);
 UserRoute.delete("/:id", DeleteUser);
