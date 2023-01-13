@@ -1,16 +1,10 @@
 const { UserModel } = require("../../Models/User.model");
 
 const AllUser = async (req, res) => {
-  let body = req.body;
-  let ALLUSER;
+  // let body = req.body;
+
   try {
-    if (body.name === "") {
-      ALLUSER = await UserModel.find();
-    } else {
-      ALLUSER = await UserModel.find({
-        name: { $regex: req.body.name, $options: "i" },
-      });
-    }
+    let ALLUSER = await UserModel.find();
     res.send({ message: "All User", Alluser: ALLUSER });
   } catch (error) {
     res.send({ message: error });
