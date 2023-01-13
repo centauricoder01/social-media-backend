@@ -4,7 +4,7 @@ const AllUser = async (req, res) => {
   let body = req.body;
   let ALLUSER;
   try {
-    if (body === {}) {
+    if (body.name === "") {
       ALLUSER = await UserModel.find();
     } else {
       ALLUSER = await UserModel.find({
