@@ -11,7 +11,11 @@ const UserSchema = mongoose.Schema(
     isAdmin: reqBool,
     email: reqString,
     gender: reqString,
-    profilePicture: { type: String, default: "" },
+    profilePicture: {
+      type: String,
+      default:
+        "https://res.cloudinary.com/diverse/image/upload/v1673590089/diverse/hdcaktula0nyoirvktn2.jpg",
+    },
     coverPicture: { type: String, default: "" },
     about: { type: String, default: "" },
     livesin: { type: String, default: "" },
