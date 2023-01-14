@@ -11,6 +11,7 @@ const PostSchema = mongoose.Schema(
         name: { type: String, required: true },
         comment: { type: String, required: true },
         id: { type: String, required: true },
+        image: { type: String, required: true },
       },
     ],
     image: String,
