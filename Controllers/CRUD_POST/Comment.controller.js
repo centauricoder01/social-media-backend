@@ -7,7 +7,7 @@ const CommentPost = async (req, res) => {
     const Post = await PostModel.findById(id);
     if (Post) {
       await Post.updateOne({ $push: { comment: data } });
-      let findAllpost = await PostModel.findOne(id);
+      let findAllpost = await PostModel.findOne({ _id: id });
       res.send({ message: "Comment Added", comment: findAllpost });
     } else {
       res.send("Post Not Found");
