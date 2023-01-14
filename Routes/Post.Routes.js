@@ -1,5 +1,6 @@
 const express = require("express");
 const { Allpost } = require("../Controllers/CRUD_POST/Allpost.controller");
+const { CommentPost } = require("../Controllers/CRUD_POST/Comment.controller");
 const {
   DeletePost,
 } = require("../Controllers/CRUD_POST/Deletepost.controller");
@@ -17,5 +18,6 @@ PostRoutes.get("/:id", GetPosts);
 PostRoutes.put("/:id", UpdatePost);
 PostRoutes.delete("/:id", DeletePost);
 PostRoutes.put("/:id/like", PostLike);
+PostRoutes.put("/:id/comment", CommentPost);
 
 module.exports = { PostRoutes };
