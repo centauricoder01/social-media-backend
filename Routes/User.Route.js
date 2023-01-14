@@ -8,6 +8,9 @@ const {
   SearchUser,
 } = require("../Controllers/CRUD_USER/SearchUser.controller");
 const {
+  UpdatePassword,
+} = require("../Controllers/CRUD_USER/UpdatePassword.controller");
+const {
   Updateuser,
 } = require("../Controllers/CRUD_USER/Updateuser.controller");
 const { FollowUser } = require("../Controllers/Followers/Follow.Controllers");
@@ -21,6 +24,7 @@ UserRoute.get("/search", SearchUser);
 UserRoute.get("/:id", GetUser);
 UserRoute.put("/:id", Updateuser);
 UserRoute.delete("/:id", DeleteUser);
+UserRoute.put("/", UpdatePassword);
 UserRoute.put("/:id/follow", FollowUser);
 UserRoute.put("/:id/unfollow", UnFollowUser);
 
