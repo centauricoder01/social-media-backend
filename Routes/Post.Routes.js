@@ -1,16 +1,16 @@
 const express = require("express");
-const PostRoutes = express.Router();
 const { Allpost } = require("../Controllers/CRUD_POST/Allpost.controller");
 const { CommentPost } = require("../Controllers/CRUD_POST/Comment.controller");
 const {
   DeletePost,
 } = require("../Controllers/CRUD_POST/Deletepost.controller");
 const { GetPosts } = require("../Controllers/CRUD_POST/Getposts.controller");
+const PostRoutes = express.Router();
 const { CreatePost } = require("../Controllers/CRUD_POST/Post.Controllers");
 const { UpdatePost } = require("../Controllers/CRUD_POST/Update.controller");
 const {
   PostLike,
-} = require("../Controllers/LIKE&DISLIKE/Like&Dislike.controller");
+} = require("../Controllers/Like&Dislike/Like&Dislike.controller");
 
 PostRoutes.post("/", CreatePost);
 PostRoutes.get("/allpost", Allpost);
