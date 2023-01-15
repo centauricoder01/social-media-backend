@@ -5,6 +5,7 @@ const { connect } = require("./Server");
 const { AuthRouter } = require("./Routes/Auth.Route");
 const { UserRoute } = require("./Routes/User.Route");
 const { PostRoutes } = require("./Routes/Post.Routes");
+// const { ChatRoute } = require("./Routes/Chat.Route");
 require("dotenv").config();
 const cors = require("cors");
 
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use("/auth", AuthRouter);
 app.use("/user", UserRoute);
 app.use("/post", PostRoutes);
+// app.use("/chat", ChatRoute);
 
 /* CONNECTION PART */
 app.listen(process.env.PORT, async () => {

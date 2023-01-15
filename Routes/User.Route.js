@@ -13,10 +13,10 @@ const {
 const {
   Updateuser,
 } = require("../Controllers/CRUD_USER/Updateuser.controller");
-const { FollowUser } = require("../Controllers/Followers/Follow.Controllers");
+const { FollowUser } = require("../Controllers/FOLLOWERS/Follow.Controllers");
 const {
   UnFollowUser,
-} = require("../Controllers/Followers/Unfollow.Controllers");
+} = require("../Controllers/FOLLOWERS/Unfollow.Controllers");
 const UserRoute = express.Router();
 
 UserRoute.get("/alluser", AllUser);

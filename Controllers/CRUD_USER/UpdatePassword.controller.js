@@ -10,9 +10,10 @@ const UpdatePassword = async (req, res) => {
       try {
         let salt = await bcrypt.genSalt(10);
         req.body.newpassword = await bcrypt.hash(newpassword, salt);
+        console.log(req.body.newpassword);
         await UserModel.findByIdAndUpdate(
           id,
-          { password: newpassword },
+          { password: req.body.newpassword },
           {
             new: true,
           }
