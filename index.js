@@ -7,6 +7,8 @@ const { UserRoute } = require("./Routes/User.Route");
 const { PostRoutes } = require("./Routes/Post.Routes");
 require("dotenv").config();
 const cors = require("cors");
+const { ChatRoute } = require("./Routes/Chat.Routes");
+const { MessageRouter } = require("./Routes/Message.Route");
 
 /* ALL MIDDLEWARE FILES */
 const app = express();
@@ -18,6 +20,8 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use("/auth", AuthRouter);
 app.use("/user", UserRoute);
 app.use("/post", PostRoutes);
+app.use("/chat", ChatRoute);
+app.use("/message", MessageRouter);
 
 /* CONNECTION PART */
 app.listen(process.env.PORT, async () => {
