@@ -15,6 +15,7 @@ const MessageSchema = mongoose.Schema(
   },
   {
     versionKey: false,
+    timestamps: true,
   }
 );
 
