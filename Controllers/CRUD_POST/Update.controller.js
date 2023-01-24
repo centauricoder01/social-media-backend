@@ -6,8 +6,8 @@ const UpdatePost = async (req, res) => {
   try {
     const Postid = await PostModel.findById(id);
     if (Postid.userId === userid) {
-      await PostModel.updateOne({ $set: req.body });
-      res.send("Post Updated");
+      let UpdatedItem = await PostModel.updateOne({ $set: req.body });
+      res.send({ message: "Post Updated", UpdatedItem });
     } else {
       res.send("You can't make change in this post");
     }
