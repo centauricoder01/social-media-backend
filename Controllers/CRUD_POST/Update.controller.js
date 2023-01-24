@@ -6,7 +6,7 @@ const UpdatePost = async (req, res) => {
   try {
     const Postid = await PostModel.findById(id);
     if (Postid.userId === userid) {
-      await PostModel.updateOne({ $set: req.body });
+      await PostModel.findByIdAndUpdate(id, req.body);
       let findbyUpdatedId = await PostModel.findById(id);
       res.send({ message: "Post Updated", post: findbyUpdatedId });
     } else {
