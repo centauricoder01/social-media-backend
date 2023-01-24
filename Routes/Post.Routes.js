@@ -9,6 +9,9 @@ const PostRoutes = express.Router();
 const { CreatePost } = require("../Controllers/CRUD_POST/Post.Controllers");
 const { UpdatePost } = require("../Controllers/CRUD_POST/Update.controller");
 const {
+  UpdateComment,
+} = require("../Controllers/CRUD_POST/UpdateComment.controller");
+const {
   PostLike,
 } = require("../Controllers/Like&Dislike/Like&Dislike.controller");
 
@@ -19,6 +22,6 @@ PostRoutes.put("/:id", UpdatePost);
 PostRoutes.delete("/:id", DeletePost);
 PostRoutes.put("/:id/like", PostLike);
 PostRoutes.put("/:id/comment", CommentPost);
-PostRoutes.put("/:id/updatecomment", UpdatePost);
+PostRoutes.put("/:id/updatecomment", UpdateComment);
 
 module.exports = { PostRoutes };
