@@ -14,7 +14,7 @@ const UserSchema = mongoose.Schema(
     profilePicture: {
       type: String,
       default:
-        "https://res.cloudinary.com/diverse/image/upload/v1674550401/diverse/a8gyoqq4gwms1eaucn6e.webp",
+        "https://res.cloudinary.com/diverse/image/upload/v1674550748/diverse/lhqvhtckg9kzoewkmqlb.jpg",
     },
     coverPicture: {
       type: String,
