@@ -12,7 +12,7 @@ const DeletePost = async (req, res) => {
       res.status(403).json("You can't delete this Post");
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.send({ message: "error" });
   }
 };
 

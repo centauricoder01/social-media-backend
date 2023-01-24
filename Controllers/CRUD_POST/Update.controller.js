@@ -12,7 +12,7 @@ const UpdatePost = async (req, res) => {
       res.status(403).json("You can't make change in this post");
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.send({ message: "error" });
   }
 };
 
