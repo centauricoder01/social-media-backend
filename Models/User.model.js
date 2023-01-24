@@ -14,12 +14,12 @@ const UserSchema = mongoose.Schema(
     profilePicture: {
       type: String,
       default:
-        "https://res.cloudinary.com/diverse/image/upload/v1673594309/diverse/ovtauheobmhzfir4wlnw.jpg",
+        "https://res.cloudinary.com/diverse/image/upload/v1673969175/diverse/fuj0mrducfhqdyhodmge.webp",
     },
     coverPicture: {
       type: String,
       default:
-        "https://res.cloudinary.com/diverse/image/upload/v1673969175/diverse/fuj0mrducfhqdyhodmge.webp",
+        "https://res.cloudinary.com/diverse/image/upload/v1674550273/diverse/rrndgl1hxsyb8v97n5o0.webp",
     },
     about: { type: String, default: "" },
     livesin: { type: String, default: "" },
