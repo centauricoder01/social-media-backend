@@ -5,10 +5,20 @@ const UpdateComment = async (req, res) => {
   let { comment, id } = req.body;
   try {
     const Post = await PostModel.findById(postid);
-    await Post.comment.findByIdAndUpdate(id, { comment });
+    let postdata = Post.comment.map((ele) => {
+      if (ele._id === id) {
+        console.log(ele);
+        return { ...ele, comment };
+      }
+      return ele;
+    });
+    // await PostModel.save();
+    // console.log(Post);
+
+    // console.log(postdata);
     res.send({ message: "Comment Updated" });
   } catch (error) {
-    req.send({ message: error });
+    res.send({ message: error });
   }
 };
 

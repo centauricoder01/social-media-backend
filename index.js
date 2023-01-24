@@ -17,6 +17,12 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 /* ALL ROUTES */
+app.get("/", (req, res) => {
+  res.send({
+    message: "Welcome to Diverse Backend",
+    Routes: "Enter Specfic URl to get The Data",
+  });
+});
 app.use("/auth", AuthRouter);
 app.use("/user", UserRoute);
 app.use("/post", PostRoutes);
