@@ -7,9 +7,9 @@ const DeletePost = async (req, res) => {
     const post = await PostModel.findById(id);
     if (post.userId === userid) {
       await post.deleteOne();
-      res.status(200).json("Post Deleted");
+      res.send("Post Deleted");
     } else {
-      res.status(403).json("You can't delete this Post");
+      res.send("You can't delete this Post");
     }
   } catch (error) {
     res.send({ message: "error" });
