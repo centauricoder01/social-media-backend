@@ -19,5 +19,6 @@ PostRoutes.put("/:id", UpdatePost);
 PostRoutes.delete("/:id", DeletePost);
 PostRoutes.put("/:id/like", PostLike);
 PostRoutes.put("/:id/comment", CommentPost);
+PostRoutes.put("/:id/updatecomment", UpdatePost);
 
 module.exports = { PostRoutes };
