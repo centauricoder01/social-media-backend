@@ -7,9 +7,9 @@ const UpdatePost = async (req, res) => {
     const Postid = await PostModel.findById(id);
     if (Postid.userId === userid) {
       await PostModel.updateOne({ $set: req.body });
-      res.status(200).json("Post Updated");
+      res.send("Post Updated");
     } else {
-      res.status(403).json("You can't make change in this post");
+      res.send("You can't make change in this post");
     }
   } catch (error) {
     res.send({ message: "error" });
